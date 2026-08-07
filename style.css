@@ -1,0 +1,17 @@
+
+
+:root {
+  --bg-color: #551d06;
+  --palette-01: #f5f5f5;
+  --palette-02: #e0e0e0;
+  --text-color: #f5f5f5;
+  --header-color: #f5f5f5;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
