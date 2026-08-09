@@ -6,9 +6,7 @@
   --header-color: #993800;
 }
 
-* {
-  overflow-x: hidden;
-}
+
 
 body {
   background-color: var(--bg-color);
@@ -18,15 +16,24 @@ body {
   padding: 0;
 }
 
+::backdrop {
+  background-color: #050505;
+  opacity: 0.9;
+}
+
 #supreme-container {
   display: flex;
   flex-flow: column;
   width: 100vw;
-  height: 150vh;
+  height: 75vh;
 }
 
 .header {
   background-color: var(--header-color);
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
 }
 
 .main-content {
@@ -39,17 +46,17 @@ body {
 
 .book-parts {
   display: grid;
-  grid-template: minmax(15%, 200px) / repeat(auto-fit, minmax(200px, 30%));
+  grid-template: 250px / repeat(auto-fit, 300px);
   gap: 10px;
-  grid-auto-rows: minmax(15%, 200px);
+  grid-auto-rows: 250px;
   padding: 20px;
 }
 
 .book-card {
   background-color: #551d06;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #f5f5f5;
-  padding: 20px;
+  padding: 10px;
 }
 
 #clock-mascot {
@@ -80,9 +87,10 @@ h1 {
 
 .book-card {
   display: grid;
-  grid-template: repeat(3, max-content) 1fr / 4fr 3fr 3fr;
-  gap: 3px;
+  grid-template: repeat(3, minmax(1fr, max-content)) 50px / 0px 4fr 1fr;
+  gap: 5px;
   box-shadow: 0 0 3px #ffa600;
+  align-items: start;
 }
 
 .book-pic {
@@ -93,24 +101,132 @@ h1 {
 
 .book-title {
   grid-area: 1 / 2 / 2 / 4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 
 .book-writer {
   grid-area: 2 / 2 / 3 / 3;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .book-page {
   grid-area: 2 / 3 / 3 / 4;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
 }
 
 .book-year {
   grid-area: 3 / 2 / 4 / 3;
+  text-decoration: underline;
+  font-size: 1.1rem;
 }
 
 .book-note {
   grid-area: 3 / 3 / 4 / 4;
+  font-family: sans-serif;
+  font-weight: 900;
+  color: #ffa600;
 }
 
 .del-button {
   grid-area: 4 / 1 / 5 / 4;
+}
+
+button.del-button {
+  padding: 10px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  background-color: rgb(136, 0, 0);
+  color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+button.del-button:hover {
+  background-color: red;
+}
+
+form button {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+button.addBookButton {
+  background-color: #ffa600;
+  color: #f5f5f5;
+  font-size: 1.3rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+button.addBookButton:hover {
+  background-color: #ff7b00;
+  box-shadow: 0 1px 2px #050505;
+}
+
+dialog {
+  /* background: linear-gradient(rgba(114, 65, 0, 0.705), rgba(0, 0, 0, 0.6)), url("assets/images/librairie-tva.png"); */
+  background-color: #993800;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 30px;
+}
+
+label {
+  font-size: 1.4rem;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+label::after {
+  content: "*";
+}
+
+form div.infos {
+  display: flex;
+  flex-flow: column;
+  margin: 20px;
+}
+
+input {
+  box-sizing: border-box;
+  height: 30px;
+  outline: none;
+  background-color: #551d06;
+  border: 1px solid #ffa600;
+  border-radius: 5px;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  padding: 1px 5px;
+}
+
+input:focus {
+  outline: 1px solid #ffbb00;
+}
+
+.btn-place {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-place button {
+  flex: 1 1 0;
 }

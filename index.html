@@ -17,11 +17,43 @@
         <h1>TVA</h1>
         <h1 id="logopart">LIBRARY</h1>
       </div>
+      <button class="addBookButton">+ Add Book</button>
     </div>
     <div class="main-content">
       <div class="book-parts">
       </div>
     </div>
+
+    <dialog id="createBookDial">
+      <form action="">
+
+
+        <div class="infos">
+          <label for="bookTitle">Book Title :</label>
+          <input id="bookTitle" type="text" minlength="4" maxlength="30" required>
+        </div>
+
+        <div class="infos">
+          <label for="bookAuthor">Book Author :</label>
+          <input type="text" id="bookAuthor" required minlength="3" maxlength="15">
+        </div>
+
+        <div class="infos">
+          <label for="bookPages">Book Pages :</label>
+          <input type="number" id="bookPages" min="100" max="1000" required>
+        </div>
+
+        <div class="infos">
+          <label for="bookRelease">Book Year Release :</label>
+          <input type="number" id="bookRelease" min="0" max="4000" required>
+        </div>
+
+        <div class="btn-place">
+          <button type="submit" id="confirmBtn">ADD BOOK</button>
+          <button id="cancel-addBtn" type="button">CANCEL</button>
+        </div>
+      </form>
+    </dialog>
   </div>
 </body>
 
